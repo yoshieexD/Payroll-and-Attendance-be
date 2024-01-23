@@ -4,6 +4,8 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const connectDB = require('./db/conn.js');
 const morgan = require('morgan');
+
+const userRoute = require('./routes/userRoutes.js');
 app.use(cors({
     origin: [process.env.ORIGIN],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
@@ -15,6 +17,8 @@ dotenv.config();
 
 
 connectDB();
+
+app.use('/user', userRoute);
 app.get('/', function (req, res) {
     res.send('Hello welcome to server');
 })
