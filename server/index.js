@@ -18,7 +18,7 @@ dotenv.config();
 
 connectDB();
 
-app.use('/user', userRoute);
+app.use('/auth', userRoute);
 app.get('/', function (req, res) {
     res.send('Hello welcome to server');
 })

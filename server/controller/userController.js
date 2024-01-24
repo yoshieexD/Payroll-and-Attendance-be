@@ -27,9 +27,11 @@ exports.login = async (req, res) => {
         if (!user) {
             return res.status(400).json({ error: 'Invalid credentials' });
         }
-        res.send({
-            message: 'Successfully login'
-        })
+        res.json({
+            auth: {
+                username: userName,
+            }
+        });
     } catch (error) {
         res.status(500).json({ error: 'Internal error' })
     }
