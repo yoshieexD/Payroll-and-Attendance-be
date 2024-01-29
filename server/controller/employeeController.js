@@ -26,6 +26,16 @@ exports.updateEmployee = async (req, res) => {
 
     }
 }
+
+exports.getEmployee = async (req, res) => {
+    try {
+        const getEmployee = await employee.find({});
+        res.json(getEmployee)
+    } catch (error) {
+        res.status(500).json({ error: 'Internal error' })
+
+    }
+}
 exports.deleteEmployee = async (req, res) => {
     try {
         const deleteEmployee = await employee.findByIdAndDelete(req.params.id);
