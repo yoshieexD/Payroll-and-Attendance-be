@@ -38,6 +38,7 @@ exports.getEmployee = async (req, res) => {
 }
 exports.deleteEmployee = async (req, res) => {
     try {
+        console.log(req.params.id)
         const deleteEmployee = await employee.findByIdAndDelete(req.params.id);
         res.json(deleteEmployee);
     } catch (error) {

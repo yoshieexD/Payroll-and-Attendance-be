@@ -3,7 +3,7 @@ const { addEmployee, updateEmployee, deleteEmployee, getEmployee } = require('..
 const router = express.Router();
 router.post('/add', addEmployee);
 router.put('/update/:id', updateEmployee);
-router.delete('/delete', deleteEmployee);
+router.delete('/delete/:id', deleteEmployee);
 router.get('/get', getEmployee);
 
 module.exports = router;
